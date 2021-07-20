@@ -1,4 +1,4 @@
-import { UserRepositories } from "../repositories/UsersRepositories"
+import { UserRepositories } from "../repositories/UsersRepositories";
 
 interface IUserRequest {
   name: string;
@@ -8,7 +8,7 @@ interface IUserRequest {
 
 class CreateUserService{
   async execute({name, email, admin}: IUserRequest) {
-    const userRepository = new UserRepositories()
+    const userRepository = new UserRepositories();
 
     if (!email) {
       throw new Error("Email incorrect")
@@ -16,7 +16,7 @@ class CreateUserService{
 
     const userAlreadyExists = await userRepository.findOne({
       email
-    })
+    });
 
     if (userAlreadyExists) {
       throw new Error("User already exists")
@@ -26,12 +26,12 @@ class CreateUserService{
       name,
       email,
       admin,
-    })
+    });
 
-    await userRepository.save(user)
+    await userRepository.save(user);
 
-    return user
+    return user;
   }
 }
 
-export {CreateUserService}
+export { CreateUserService };
