@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { CreateTagController } from "./controller/CreateTagController";
-import { CreateUserController } from "./controller/CreateUserController";
-import { AuthenticateUserController } from "./controller/AuthenticateUserController";
+import { CreateTagController } from "./controllers/CreateTagController";
+import { CreateUserController } from "./controllers/CreateUserController";
+import { AuthenticateUserController } from "./controllers/AuthenticateUserController";
 import { ensureAdmin } from "./middlewares/ensureAdmin";
 
 const router = Router();
